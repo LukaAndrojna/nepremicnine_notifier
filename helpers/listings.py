@@ -1,7 +1,7 @@
 import threading
 
-import config
-import page_parser
+import helpers.config as config
+import helpers.page_parser as page_parser
 
 
 class Listings:

@@ -1,7 +1,7 @@
-import config
-
 import requests
 from bs4 import BeautifulSoup, element
+
+import helpers.config as config
 
 
 class Listing:

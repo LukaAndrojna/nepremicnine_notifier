@@ -29,9 +29,9 @@ def main():
             for ad in ads:
                 executor.submit(listings.parse_listing, ad)
 
-    email_msg = listings.generate_email()
-    if email_msg != '':
-        email_notification.send(email_msg)
+    #email_msg = listings.generate_email()
+    #if email_msg != '':
+    #    email_notification.send(email_msg)
 
     with open(config.json_file, 'w') as fp:
         json.dump(listings.get_reviewed_listings(), fp)
