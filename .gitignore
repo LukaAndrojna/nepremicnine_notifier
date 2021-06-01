@@ -7,8 +7,5 @@ __pycache__/
 pip-log.txt
 pip-delete-this-directory.txt
 
-CSVs/
-TXTs/
-local_config.py
-data.csv
-JSON/reviewed.json
+JSON/
+configuration.json
