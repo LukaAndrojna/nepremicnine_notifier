@@ -1,4 +1,4 @@
-mail_subject = "Nepremicnine changed"
+mail_subject = 'Nepremicnine changed'
 
 bs4_block = 'div'
 href_parser = 'a'
@@ -10,4 +10,4 @@ info_attributes_bs4_class = 'more_info'
 
 summary_attributes_bs4_block = 'div'
 summary_attributes_bs4_attrs = ''
-summary_attributes_bs4_class = 'more_info'
+summary_attributes_bs4_class = 'kratek'

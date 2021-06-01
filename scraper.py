@@ -1,9 +1,9 @@
+from os import path
 import json
 import requests
 from time import sleep
 import concurrent.futures
 from bs4 import BeautifulSoup
-from os import path
 
 from helpers.listings import Listings
 from helpers.page import Page

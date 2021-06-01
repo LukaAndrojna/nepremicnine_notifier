@@ -17,4 +17,3 @@ class Page:
         self.summary_attributes_bs4_block = page["summary_attributes"]["bs4_block"] if "summary_attributes" in page and "bs4_block" in page["summary_attributes"] else defaults.summary_attributes_bs4_block
         self.summary_attributes_bs4_attrs = page["summary_attributes"]["bs4_attrs"] if "summary_attributes" in page and "bs4_attrs" in page["summary_attributes"] else defaults.summary_attributes_bs4_attrs
         self.summary_attributes_bs4_class = page["summary_attributes"]["bs4_class"] if "summary_attributes" in page and "bs4_class" in page["summary_attributes"] else defaults.summary_attributes_bs4_class
-    

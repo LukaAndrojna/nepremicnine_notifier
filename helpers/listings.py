@@ -1,6 +1,6 @@
 import threading
-import helpers.page_parser as page_parser
 
+import helpers.page_parser as page_parser
 from helpers.page import Page
 
 class Listings:

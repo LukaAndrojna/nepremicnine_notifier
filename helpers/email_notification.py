@@ -3,8 +3,8 @@ from email import encoders
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
-from helpers.page import Page
 
+from helpers.page import Page
 import helpers.config as config
 
 def send(page_config: Page, msg_body: str):
