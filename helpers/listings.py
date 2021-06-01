@@ -1,8 +1,7 @@
 import threading
-
-import helpers.config as config
 import helpers.page_parser as page_parser
 
+from helpers.page import Page
 
 class Listings:
     def __init__(self, reviewed_listings: dict):
@@ -10,8 +9,8 @@ class Listings:
         self._listings_to_report = list()
         self._lock = threading.Lock()
     
-    def parse_listing(self, ad):
-        listing, success = page_parser.get_listing_entry(ad, self._reviewed_listings)
+    def parse_listing(self, ad, page_config: Page):
+        listing, success = page_parser.get_listing_entry(ad, self._reviewed_listings, page_config)
         with self._lock:
             if success:
                 self._listings_to_report.append(listing)
