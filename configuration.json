@@ -1,0 +1,29 @@
+{
+    "pages": [
+        {
+            "key": "LjubljanaOkolica",
+            "default_url": "https://www.nepremicnine.net",
+            "page_url": "https://www.nepremicnine.net/oglasi-prodaja/ljubljana-okolica/",
+            "from_email": "example@gmail.com",
+            "gmail_api_key": "generate this in account settings",
+            "to_email":["example@gmail.com", "example2@gmail.com"],
+            "mail_subject": "Nepremicnine update - Ljubljana okolica",
+            "bs4_block": "div",
+            "href_parser": "a",
+            "bs4_attrs": {
+                "class": "oglas_container",
+                "itemtype": "http://schema.org/ListItem"
+            },
+            "info_attributes": {
+                "bs4_block": "div",
+                "bs4_attrs": {},
+                "bs4_class": "more_info"
+            },
+            "summary_attributes": {
+                "bs4_block": "div",
+                "bs4_attrs": {},
+                "bs4_class": "kratek"
+            }
+        }
+    ]
+}
