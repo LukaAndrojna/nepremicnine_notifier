@@ -4,6 +4,9 @@
             "key": "LjubljanaOkolica",
             "default_url": "https://www.nepremicnine.net",
             "page_url": "https://www.nepremicnine.net/oglasi-prodaja/ljubljana-okolica/",
+            "from_email": "example@gmail.com",
+            "gmail_api_key": "generate this in account settings",
+            "to_email":["example@gmail.com", "example2@gmail.com"],
             "mail_subject": "Nepremicnine update - Ljubljana okolica",
             "bs4_block": "div",
             "href_parser": "a",
@@ -21,13 +24,6 @@
                 "bs4_attrs": {},
                 "bs4_class": "kratek"
             }
-        },
-        {
-            "key": "LjubljanaMesto",
-            "to_email": ["example5@gmail.com"],
-            "default_url": "https://www.nepremicnine.net",
-            "page_url": "https://www.nepremicnine.net/oglasi-prodaja/ljubljana-mesto/",
-            "mail_subject": "Nepremicnine update - Ljubljana mesto"
         }
     ]
 }

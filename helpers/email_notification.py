@@ -5,23 +5,24 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
 from helpers.page import Page
-import helpers.config as config
 
-def send(page_config: Page, msg_body: str):
-    msg = MIMEMultipart() 
 
-    msg['From'] = config.from_email
-    msg['To'] = page_config.to_email
+def send(page_config: Page, msg_body: str) -> None:
+    for to_email in page_config.to_email:
+        msg = MIMEMultipart() 
 
-    msg['Subject'] = page_config.mail_subject
-    msg.attach(MIMEText(msg_body, 'plain')) 
+        msg['From'] = page_config.from_email
+        msg['To'] = to_email
 
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    s.starttls() 
+        msg['Subject'] = page_config.mail_subject
+        msg.attach(MIMEText(msg_body, 'plain')) 
 
-    s.login(msg['From'], config.gmail_api_key) 
+        s = smtplib.SMTP('smtp.gmail.com', 587)
+        s.starttls() 
 
-    text = msg.as_string() 
+        s.login(msg['From'], page_config.gmail_api_key) 
 
-    s.sendmail(msg['From'], msg['From'], text)
-    s.quit()
+        text = msg.as_string() 
+
+        s.sendmail(msg['From'], msg['To'], text)
+        s.quit()
