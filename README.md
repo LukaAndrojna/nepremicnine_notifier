@@ -22,7 +22,31 @@ python3 scraper.py
 run the bash script on the first run only. I suggest you make a cron tab or nssm.exe for creating window service and add a while loop or with timeouts if you want to automate this.
 
 ## Configuration
-The configuration is simple json file, with default element of "pages". Each "page" needs to have "key", which defines each page. The file that will be created and searched in is named after this. If you want to override to whom you want to send email you include element "to_email", if element will be missing, emails from config will be used. If the link of each advert is combined with default url and page url, you have to enter element "default_url" otherwise you simply leave it empty or skip it. Element "page_url" is the page url that will be used for search. It has to contain all filters used for search. Element "mail_subject" is tag for defining subject you will recieve in mail, so if you run script for more pages you can identify upfront which one was changed. Element "bs4_block" is custom for each page, because some of webpages can use default blocks as "div" (most cases) some can use others - if you skip this element or leave it empty, it will use default "div". Element "href_parser" is used for finding links to advert - most pages have href defined in "a" tag, but there exists some of them that does not have it like that, so you can customize it - if you skip this element or leave it empty, it will use default "a". Element block "bs4_attrs" is used for searching adverts as full blocks. It has to have "class" tag so we can find the right block with advert, and it is recomended to use "itemtype" so it can be more specific. Element "bs4_attrs" can be skipt and script will use default configuration "{"class":"oglas_container", "itemtype": "http://schema.org/ListItem"}". Element block "info_attributes" is used to find some info of advert. it has 3 tags - "bs4_block" - block in the webpage where we find the info, "bs4_attrs" is same as before and can be empty and "bs4_class" with class name for more specific search. All data of element block "info_attributes" is optional and if empty it will use default settings. The same stuctire as element block "info_attributes" is for element block "summary_attributes".
+The configuration is simple json file, the parameters you need to edit are:
+- `key`: this will be used to seperate different queries to nepremicnine (and other sites in the future)
+- `default_url`: root url of the page (for instance: "https://www.nepremicnine.net")
+- `page_url`: link of the page you want to scrape, on nepremicnine.net thatis all filters used for search
+- `from_email`: the Gmail address the email notification should be sent from
+- `gmail_api_key`: generated API key or password for this email address
+- `to_email`: list of all of recipient's email addresses 
+- `mail_subject`: subject of the email
+
+Advanced features defaults are set up for nepremicnine.net:
+
+- `bs4_block` can differ between pages, change if needed. Defaults to `div`.
+- `href_parser` used for finding links to advert, can differ between pages, change if needed. Defaults to `a`.
+- `bs4_attrs` is used for searching adverts as full blocks:
+  - `class` is used so we can find the right block within the advert.
+  - `itemtype` so it can be more specific.
+- `bs4_attrs`: is optional, defaults to "{"class":"oglas_container", "itemtype": "http://schema.org/ListItem"}".
+- `info_attributes` is used to find some info of advert. it has 3 tags:
+  - `bs4_block`: block in the webpage where we find the info.
+  - `bs4_attrs`: is same as before and can be empty.
+  - `bs4_class`: with class name for more specific search.
+
+## Contributors
+- [LukaAndrojna](https://github.com/LukaAndrojna)
+- [KristjanDS](https://github.com/kristjands)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
