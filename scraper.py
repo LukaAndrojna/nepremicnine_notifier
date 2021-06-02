@@ -1,18 +1,19 @@
 from os import path
 import json
 import requests
+from os import path
 from time import sleep
 import concurrent.futures
 from bs4 import BeautifulSoup
 
+from helpers.page import load_configs
 from helpers.listings import Listings
 from helpers.page import Page
 import helpers.email_notification as email_notification
-import helpers.config as config
+
 
 def main():
-    page_config: Page
-    for page_config in config.configuration:
+    for page_config in load_configs():
         reviewed_listings = {}
         file_path = f'JSON/{page_config.key}.json'
         if not path.exists(file_path):
@@ -25,7 +26,7 @@ def main():
         listings = Listings(reviewed_listings)
 
         for i in range(1, 1000):
-            page = requests.get(config.get_serach_url(page_config.page_url, i))
+            page = requests.get(page_config.get_serach_url(i))
             soup = BeautifulSoup(page.content, 'html.parser')
 
             ads = soup.find_all(page_config.bs4_block, attrs=page_config.bs4_attrs)
