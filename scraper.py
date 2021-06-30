@@ -1,4 +1,3 @@
-from os import path
 import json
 import requests
 from os import path
@@ -8,7 +7,6 @@ from bs4 import BeautifulSoup
 
 from helpers.page import load_configs
 from helpers.listings import Listings
-from helpers.page import Page
 import helpers.email_notification as email_notification
 
 
