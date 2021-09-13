@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Copy the `configuration.example.json` file into `configuration.json` and put in your email adresses and a gmail generated API key.
+Copy the `configuration_example.json` file into `configuration.json` and put in your email adresses and a gmail generated API key.
 To generate an API key go to account settings, App passwords, add new App, and copy the generated password.
 In configuration.json you can change and add pages you want to check. There exist a simple template what it should look like and also in next section there is description of json elements.
 
