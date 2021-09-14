@@ -5,19 +5,22 @@
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
 
 ```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ## Usage
 
-Change the config.py file by entering in your email adresses and a gmail generated API key.
+Copy the `configuration_example.json` file into `configuration.json` and put in your email adresses and a gmail generated API key.
+To generate an API key go to account settings, App passwords, add new App, and copy the generated password.
 In configuration.json you can change and add pages you want to check. There exist a simple template what it should look like and also in next section there is description of json elements.
 
 Run
 Navigate to this directory.
 ```bash
-bash setup.sh
-python3 scraper.py
+source venv/bin/activate
+python scraper.py
 ```
 run the bash script on the first run only. I suggest you make a cron tab or nssm.exe for creating window service and add a while loop or with timeouts if you want to automate this.
 
