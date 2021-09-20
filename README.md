@@ -50,6 +50,7 @@ Advanced features defaults are set up for nepremicnine.net:
 ## Contributors
 - [LukaAndrojna](https://github.com/LukaAndrojna)
 - [KristjanDS](https://github.com/kristjands)
+- [pr3mar](https://github.com/pr3mar)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
