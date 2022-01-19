@@ -16,7 +16,6 @@ class Listings:
                 self._listings_to_report.append(listing)
     
     def generate_email(self) -> str:
-        print(len(self._listings_to_report))
         return '\n'.join([listing.report() for listing in self._listings_to_report])
 
     def get_reviewed_listings(self) -> dict:

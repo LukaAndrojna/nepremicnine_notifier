@@ -36,6 +36,7 @@ The configuration is simple json file, the parameters you need to edit are:
 
 Advanced features defaults are set up for nepremicnine.net:
 
+- `admin_mail`: the mail of the admin - usually the one who is running the script - to this email the error notification will be sent if there will be any. If not filled the `from_email` tag will be used.
 - `bs4_block` can differ between pages, change if needed. Defaults to `div`.
 - `href_parser` used for finding links to advert, can differ between pages, change if needed. Defaults to `a`.
 - `bs4_attrs` is used for searching adverts as full blocks:

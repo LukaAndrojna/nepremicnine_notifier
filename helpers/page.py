@@ -12,6 +12,7 @@ class Page:
         self.gmail_api_key = page['gmail_api_key']
         self.default_url = page['default_url']
         self.page_url = page['page_url']
+        self.admin_mail = page['admin_mail'] if 'admin_mail' in page else page['from_email']
 
         self.mail_subject = page['mail_subject'] if 'mail_subject' in page else defaults.mail_subject
         self.bs4_block = page['bs4_block'] if 'bs4_block' in page else defaults.bs4_block
@@ -34,7 +35,6 @@ def check_fields(page: Dict) -> None:
     for key in keys:
         if key not in page:
             raise Exception(f'Missing {key} parameter in configuration')
-
 
 def load_configs() -> None:
     with open('./configuration.json') as json_file:
